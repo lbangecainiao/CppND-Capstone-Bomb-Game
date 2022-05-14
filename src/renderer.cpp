@@ -142,7 +142,7 @@ void Renderer::RenderExplosionSingleDirection(int bombX, int bombY, int deltaX, 
   }
 }
 
-void Renderer::UpdateWindowTitle(int score, int fps) {
-  std::string title{"Snake Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
+void Renderer::UpdateWindowTitle(std::string gameInfo, int fps) {
+  std::string title{gameInfo + " FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
 }

@@ -104,7 +104,15 @@ void Game::Run(Controller &&controller, Renderer &renderer,
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(score, frame_count);
+      std::string gameInfo = "Game running";
+      if (!(snake1Ptr->alive)) {
+        gameInfo = "Player2 wins, you can quit the game";
+      }
+      if (!(snake2Ptr->alive)) {
+        gameInfo = "Player1 wins, you can quit the game";
+      }
+      
+      renderer.UpdateWindowTitle(gameInfo, frame_count);
       frame_count = 0;
       title_timestamp = frame_end;
     }

@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <memory>
+#include <string>
 #include "SDL.h"
 #include "snake.h"
 #include "game.h"
@@ -19,7 +20,7 @@ class Renderer {
   void RenderSinglePlayer(std::shared_ptr<Snake> snake);
   void RenderExplosionSingleDirection(int bombX, int bombY, int deltaX, int deltaY, int explodeLength);
   void RenderObstacle();
-  void UpdateWindowTitle(int score, int fps);
+  void UpdateWindowTitle(std::string gameInfo, int fps);
   std::shared_ptr<Game> gamePtr;
 
  private:
